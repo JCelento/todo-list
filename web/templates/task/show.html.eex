@@ -1,0 +1,30 @@
+<h2>Show task</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @task.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @task.description %>
+  </li>
+
+  <li>
+    <strong>Progress:</strong>
+    <%= @task.progress %>
+  </li>
+
+<%= render "subtasks.html", task: @task %>
+
+
+<%= render "subtask_form.html", task: @task, changeset: @changeset,
+action: task_task_path(@conn, :add_subtask, @task) %>
+
+
+</ul>
+
+<span><%= link "Edit", to: task_path(@conn, :edit, @task) %></span>
+<span><%= link "Back", to: task_path(@conn, :index) %></span>

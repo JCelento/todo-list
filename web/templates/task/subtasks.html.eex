@@ -1,0 +1,17 @@
+<h3> SubTasks: </h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for subtask <- @task.subtasks do %>
+    <tr>
+      <td><%= subtask.description %></td>
+      <td><%= subtask.done %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
